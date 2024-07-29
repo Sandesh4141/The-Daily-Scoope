@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <%-include("header.ejs") %>
+        <div class="card-container">
+            <% responseData.forEach(item=> { %>
+                <div class="card">
+                    <h2>
+                        <%= item.title %>
+                    </h2>
+                    <p><strong>Source:</strong>
+                        <%= item.source.name %>
+                    </p>
+                    <p><strong>Author:</strong>
+                        <%= item.author %>
+                    </p>
+                    <p>
+                        <%= item.description %>
+                    </p>
+                    <a href="<%= item.url %>">Read More</a>
+                </div>
+                <% }); %>
+        </div>
+</body>
+<%-include("footer.ejs") %>
+
+</html>

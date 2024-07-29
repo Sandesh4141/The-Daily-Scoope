@@ -1,0 +1,134 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+h1{
+    background-color: #4997ab;
+    color: white;
+    text-align: center;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #4997ab; /* Dark teal background */
+    color: #ffffff;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffc857; /* Light orange hover color */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #e0f7fa; /* Light cyan background */
+    color: #004d61;
+}
+
+.search-bar button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffc857; /* Light orange button */
+    color: #004d61;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: none;
+    background-color: #004d61;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #004d61; /* Dark teal background */
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .search-bar {
+        display: none;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    .nav {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .search-bar {
+        display: flex;
+    }
+}
+
+/* Active class for mobile nav */
+.nav.active {
+    display: flex;
+}

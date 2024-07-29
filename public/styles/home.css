@@ -1,0 +1,83 @@
+:root {
+    --primary-color: #004d61; /* Dark teal */
+    --secondary-color: #ffc857; /* Light orange */
+    --background-color: #f9f9f9; /* Light grey */
+    --card-bg-color: #fff; /* White */
+    --border-color: #ccc; /* Light grey */
+    --text-color: #333; /* Dark grey */
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Card Styling */
+.card {
+    width: 100%;
+    margin: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+.card a:hover {
+    color: var(--secondary-color);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* Two cards per row */
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: calc(33.33% - 20px); /* Three cards per row */
+    }
+}
